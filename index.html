@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>RAKHA — LINKS</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        gamer: ['Orbitron'],
+        body: ['Inter']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+/* ===== MOVING GRADIENT BACKGROUND ===== */
+body {
+  background: linear-gradient(
+    120deg,
+    #1e003a,
+    #3b1c9a,
+    #0ea5e9,
+    #1e003a
+  );
+  background-size: 400% 400%;
+  animation: bgFlow 18s ease infinite;
+  overflow: hidden;
+}
+
+@keyframes bgFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== DOT MATRIX ===== */
+.bg-dots {
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.18) 1px, transparent 1px);
+  background-size: 24px 24px;
+  animation: dotsFloat 60s linear infinite;
+  opacity: .25;
+  pointer-events: none;
+}
+
+@keyframes dotsFloat {
+  from { background-position: 0 0; }
+  to { background-position: 900px 1400px; }
+}
+
+/* ===== PARTICLES ===== */
+canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ===== AVATAR GLOW ===== */
+.avatar {
+  box-shadow: 0 0 45px rgba(139,92,246,.9);
+  animation: avatarGlow 3s infinite ease-in-out;
+}
+
+@keyframes avatarGlow {
+  50% { box-shadow: 0 0 85px rgba(56, 191, 248, 0.397); }
+}
+
+/* ===== NEON LINK ===== */
+.neon {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,#22d3ee86,#8b5cf6,#ec4899);
+  opacity:.15;
+  transition:.4s;
+}
+
+.neon:hover::before {
+  opacity:.45;
+}
+
+/* ===== FADE IN ===== */
+.fade-in {
+  animation: fade 1.2s ease forwards;
+}
+
+@keyframes fade {
+  from { opacity:0; transform: translateY(20px); }
+  to { opacity:1; transform:none; }
+}
+
+/* ===== TYPE CURSOR ===== */
+#typeText::after {
+  content: "▍";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+</style>
+</head>
+
+<body class="font-body text-white flex items-center justify-center min-h-screen py-20">
+
+<div class="bg-dots"></div>
+<canvas id="particles"></canvas>
+
+<!-- AUDIO -->
+<audio id="bgm" loop preload="auto">
+  <source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ENTER -->
+<div id="enter" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+  <button onclick="startSite()"
+    class="font-gamer tracking-widest text-cyan-400 border border-cyan-400 px-12 py-4 rounded-xl
+           hover:bg-cyan-400 hover:text-black transition delay-50 duration-900 animation ease-in-out">
+    ENTER
+  </button>
+</div>
+
+<!-- CARD -->  
+<div id="card"
+ class="relative z-10 w-[360px] rounded-[40px] px-6 pt-2 pb-6
+        bg-white/10 border border-white/30 backdrop-blur-2xl shadow-2xl opacity-5">
+  <!-- NAME -->
+  <div class="text-center mt-4">
+    <h1 class="font-gamer tracking-widest text-xl hover:-translate-y-1 animation ease-in-out duration-300 delay-50">RAKHA</h1>
+    <p class="text-bold text-gray-300 mt-1 text-sm hover:-translate-y-1 animation ease-in-out duration-300 delay-50">Gaming • Web Programming • Crypto <br>• Math-Lover • Informatic-Lover! </p>
+  </div>
+
+  <!-- TYPEWRITER -->
+  <p id="typeText" class="text-center text-sm text-gray-300 mt-3"></p>
+
+  <!-- SOCIAL -->
+  <div class="flex justify-center gap-6 mt-6">
+    <a class="hover:text-red-600 hover:-translate-y-1 animation ease-in-out duration-300 delay-50" href="https://www.instagram.com/rakhaa.js/" target="_blank"><i data-lucide="instagram"></i></a>
+    <a class="hover:text-red-600 hover:-translate-y-1 animation ease-in-out duration-300 delay-50" href="https://www.youtube.com/@berisikxd" target="_blank"><i data-lucide="youtube"></i></a>
+    <a class="hover:text-red-600 hover:-translate-y-1 animation ease-in-out duration-300 delay-50" href="https://github.com/Beerisikk" target="_blank"><i data-lucide="github"></i></a>
+    <a class="hover:text-red-600 hover:-translate-y-1 animation ease-in-out duration-300 delay-50" href="https://discord.com/users/1199514516371816479" target="_blank"><i data-lucide="gamepad-2"></i></a>
+
+  </div>
+
+  <!-- LINKS -->
+  <div class="mt-7 space-y-3">
+    <a href="https://rakha-portofolio-v1-5.vercel.app/" target="_blank" class=" hover:border-teal-300 hover:-translate-y-1 animation ease-in-out duration-300 delay-50 flex items-center justify-between py-3 px-4 rounded-xl border border-white/20">
+      <div class="flex gap-3 "><i data-lucide="globe"></i> My Portofolio!</div>
+      <i data-lucide="chevron-right"></i>
+    </a>
+  </div>
+
+  <button onclick="toggleSound()" class=" py-3 hover:text-bold hover:-translate-y-0.5 animation ease-in-out duration-300 delay-50 text-sm text-gray-400 hover:text-cyan-400">
+    🔊 Toggle Sound <em>( Click Me! )</em>
+  </button>
+
+  <p class="text-center text-xs text-white mt-4">© 2026 Rakha</p>
+</div>
+
+<script>
+lucide.createIcons();
+
+/* ===== AUDIO ===== */
+const audio = document.getElementById("bgm");
+const enter = document.getElementById("enter");
+const card = document.getElementById("card");
+let vol = 0;
+audio.volume = 0;
+
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+function fadeAudio(){
+  if(vol < 0.35){ 
+    vol += 0.01;
+    audio.volume = vol;
+    requestAnimationFrame(fadeAudio);
+  }
+}
+
+function startSite(){
+  audio.play();
+  fadeAudio();
+  enter.remove();
+  card.classList.remove("opacity-0");
+  card.classList.add("fade-in");
+  startTyping();
+}
+
+if(!isMobile){
+  audio.play().then(()=>{
+    fadeAudio();
+    enter.remove();
+    card.classList.remove("opacity-0");
+    card.classList.add("fade-in");
+    startTyping();
+  }).catch(()=>{});
+}
+
+function toggleSound(){
+  audio.paused ? audio.play() : audio.pause();
+}
+
+document.addEventListener("visibilitychange",()=>{
+  document.hidden ? audio.pause() : audio.play();
+});
+
+/* ===== TYPEWRITER ===== */
+const texts = [ 
+    "Known as", 
+    "Natta",
+    "Rakha",
+    " My Tagline",
+    "Build. Dominate. Repeat.",
+    "Gaming • Web • Crypto",
+    "Level Up Every Day."
+];
+
+const el = document.getElementById("typeText");
+let t = 0, c = 0, del = false;
+
+function typeLoop(){
+  const current = texts[t];
+  if(!del){
+    el.textContent = current.slice(0, ++c);
+    if(c === current.length){
+      del = true;
+      setTimeout(typeLoop, 1200);
+      return;
+    }
+  } else {
+    el.textContent = current.slice(0, --c);
+    if(c === 0){
+      del = false;
+      t = (t + 1) % texts.length;
+    }
+  }
+  setTimeout(typeLoop, del ? 40 : 70);
+}
+
+function startTyping(){
+  setTimeout(typeLoop, 500);
+}
+
+/* ===== PARTICLES ===== */
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+let w,h,pts=[];
+
+function resize(){
+  w=canvas.width=innerWidth;
+  h=canvas.height=innerHeight;
+}
+resize(); addEventListener("resize",resize);
+
+for(let i=0;i<80;i++){
+  pts.push({
+    x:Math.random()*w,
+    y:Math.random()*h,
+    vx:(Math.random()-.5)*0.25,
+    vy:(Math.random()-.5)*0.25
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,w,h);
+  ctx.fillStyle="rgba(165,180,252,.8)";
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>w) p.vx*=-1;
+    if(p.y<0||p.y>h) p.vy*=-1;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,1.5,0,Math.PI*2);
+    ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
